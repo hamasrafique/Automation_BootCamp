@@ -1,0 +1,49 @@
+Generated User: {
+  fullname: 'Test User 1788334408634',
+  email: 'testuser1788334408634@gmail.com',
+  username: 'testuser1788334408634',
+  password: 'Test@12345'
+}
+Register Status: 201
+Register Response: {"statusCode":201,"data":{"_id":"6a97d149de39888b9e4afe65","username":"testuser1788334408634","email":"testuser1788334408634@gmail.com","fullname":"Test User 1788334408634","createdAt":"2026-09-02T07:33:29.182Z","updatedAt":"2026-09-02T07:33:29.182Z","__v":0},"message":"User registered Successfully","success":true}
+User saved to users.json
+Login Status: 200
+Token received
+GET Status: 200
+Current User: {
+  statusCode: 200,
+  data: {
+    _id: '6a97d149de39888b9e4afe65',
+    username: 'testuser1788334408634',
+    email: 'testuser1788334408634@gmail.com',
+    fullname: 'Test User 1788334408634',
+    createdAt: '2026-09-02T07:33:29.182Z',
+    updatedAt: '2026-09-02T07:33:30.379Z',
+    __v: 0
+  },
+  message: 'Current user fetched successfully',
+  success: true
+}
+Updated User: {
+  fullname: 'Updated User 1788334408634',
+  email: 'updated1788334408634@gmail.com',
+  username: 'updated1788334408634'
+}
+PUT Status: 200
+PUT Response: {"statusCode":200,"data":{"_id":"6a97d149de39888b9e4afe65","username":"updated1788334408634","email":"updated1788334408634@gmail.com","fullname":"Updated User 1788334408634","createdAt":"2026-09-02T07:33:29.182Z","updatedAt":"2026-09-02T07:33:31.775Z","__v":0,"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTk3ZDE0OWRlMzk4ODhiOWU0YWZlNjUiLCJlbWFpbCI6InRlc3R1c2VyMTc4ODMzNDQwODYzNEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IlRlc3QgVXNlciAxNzg4MzM0NDA4NjM0IiwiaWF0IjoxNzg4MzM0NDEwLCJleHAiOjE3ODkxOTg0MTB9.nZX8QVWZ1RJMRt7VxPTUA_RwAo61iU3NJDTs4vV93I0"},"message":"User details replaced successfully","success":true}
+GET After PUT: 200
+Updated User From API: {
+  statusCode: 200,
+  data: {
+    _id: '6a97d149de39888b9e4afe65',
+    username: 'updated1788334408634',
+    email: 'updated1788334408634@gmail.com',
+    fullname: 'Updated User 1788334408634',
+    createdAt: '2026-09-02T07:33:29.182Z',
+    updatedAt: '2026-09-02T07:33:31.775Z',
+    __v: 0
+  },
+  message: 'Current user fetched successfully',
+  success: true
+}
+Login After PUT: 200

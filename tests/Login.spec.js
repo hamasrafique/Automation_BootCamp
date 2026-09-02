@@ -106,31 +106,31 @@
 
 // });
 
-import { test, expect } from '@playwright/test';
+// import { test, expect } from '@playwright/test';
 
-import loginData from '../testdata/loginData.json';
+// import loginData from '../testdata/loginData.json';
 
-import LoginPage from '../pages/LoginPage';
+// import LoginPage from '../pages/LoginPage';
 
 
-// ======================================================
-// TC 1 - VALID USERNAME AND VALID PASSWORD
-// ======================================================
+// // ======================================================
+// // TC 1 - VALID USERNAME AND VALID PASSWORD
+// // ======================================================
 
-test('TC 1 - Valid Username and Valid Password', async ({ page }) => {
+// test('TC 1 - Valid Username and Valid Password', async ({ page }) => {
 
-  const login = new LoginPage(page);
+//   const login = new LoginPage(page);
 
-  // Selecting first dataset from JSON
-  const data = loginData.loginTests[0];
+//   // Selecting first dataset from JSON
+//   const data = loginData.loginTests[0];
 
-  await login.gotoURL();
+//   await login.gotoURL();
 
-  await login.login(data.username, data.password);
+//   await login.login(data.username, data.password);
 
-  await expect(login.message.first()).toHaveText(data.expectedMsg);
+//   await expect(login.message.first()).toHaveText(data.expectedMsg);
 
-});
+// });
 
 
 // ======================================================
@@ -215,3 +215,69 @@ test('TC 1 - Valid Username and Valid Password', async ({ page }) => {
 //     .toHaveText(data.expectedMsg);
 
 // });
+
+// import {test, expect} from '@playwright/test';
+// import loginData from '../testdata/loginData.json';
+// import LoginPage from '../pages/LoginPage';
+
+
+// test.describe('Login', ()=> {
+//   test(`Login Test Case with valid user`, async ({page}) => {
+//     const loginPage = new LoginPage(page);
+//     const data = loginData.validUsers[0];
+
+//     await test.step('Open login Page', async() =>{
+//     await loginPage.gotoLoginPage();
+// });
+
+//     await test.step('Enter credentail and login', async() =>{
+//     await loginPage.login(data.username, data.password);
+// });
+
+//     await test.step('Verify Welcome Message on Landing page', async() =>{
+//     await expect(loginPage.message.first()).toHaveText(data.ExpectedMsg);
+//     await loginPage.attachScreenshot('05 - Welcome Message Should be displayed');
+// });
+// });
+
+//   test(`Login Test Case with invalid user`, async ({page}) => {
+//     const loginPage = new LoginPage(page);
+//     const data = loginData.validUsers[1];
+
+//     await test.step('Open login Page', async() =>{
+//     await loginPage.gotoLoginPage();
+// });
+
+//     await test.step('Enter credentail and login', async() =>{
+//     await loginPage.login(data.username, data.password);
+// });
+
+//     await test.step('Verify Welcome Message on Landing page', async() =>{
+//     await expect(loginPage.message.first()).toHaveText(data.ExpectedMsg);
+//     await loginPage.attachScreenshot('05 - Error Message Should be Displayed');
+// });
+// });
+
+// });
+
+
+import { test, expect } from '../fixtures/testSetup.js';
+import loginData from '../testdata/loginData.json' assert { type: 'json' };
+import LoginPage from '../pages/LoginPage.js';
+import { attachStepScreenshot } from '../utils/screenshotUtil.js';
+
+    test.describe('Login', () => {
+        test('Login Test Case with valid user', async ({ page }) => {
+            const loginPage = new LoginPage(page);
+            const data = loginData;
+                await test.step('Enter credential and login', async () => {
+                await loginPage.login(data.username, data.password);
+        });
+
+        await test.step('Verify Welcome Message on Landing page', async () => {
+            await expect(loginPage.message.first()).toHaveText(data.ExpectedMsg);
+            await attachStepScreenshot(page, '05 - After welcome message verification');
+
+        });
+    });
+});

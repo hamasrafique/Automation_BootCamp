@@ -1,0 +1,8 @@
+Generated User: {
+  fullname: 'Test User 1788334408636',
+  email: 'testuser1788334408636@gmail.com',
+  username: 'testuser1788334408636',
+  password: 'Test@12345'
+}
+Register Status: 400
+Register Response: {"statusCode":400,"success":false,"message":"Duplicate username entered","errors":[]}

@@ -1,0 +1,17 @@
+Register: 201
+Login: 200
+Original User: {
+  statusCode: 200,
+  data: {
+    _id: '6a97cc4e4673d7efbc504c99',
+    username: 'hamasrafique',
+    email: 'hamasrafique@gmail.com',
+    fullname: 'Hamas Rafique',
+    createdAt: '2026-09-02T07:12:14.172Z',
+    updatedAt: '2026-09-02T07:12:15.401Z',
+    __v: 0
+  },
+  message: 'Current user fetched successfully',
+  success: true
+}
+PUT: 400

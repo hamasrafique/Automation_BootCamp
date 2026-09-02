@@ -1,0 +1,43 @@
+[
+  {
+    "register": {
+      "fullname": "Hamas Rafique",
+      "email": "hamasrafique@gmail.com",
+      "username": "hamasrafique",
+      "password": "hamas123"
+    },
+    "update": {
+      "fullname": "Hamas Updated",
+      "email": "hamasupdated@gmail.com",
+      "username": "hamas12345"
+    }
+  },
+  {
+    "fullname": "Updated User 1788334408634",
+    "email": "updated1788334408634@gmail.com",
+    "username": "updated1788334408634",
+    "password": "Test@12345",
+    "status": "updated"
+  },
+  {
+    "fullname": "Updated User 1788334408636",
+    "email": "updated1788334408636@gmail.com",
+    "username": "updated1788334408636",
+    "password": "Test@12345",
+    "status": "updated"
+  },
+  {
+    "fullname": "Updated User 1788335353292",
+    "email": "updated1788335353292@gmail.com",
+    "username": "updated1788335353292",
+    "password": "Test@12345",
+    "status": "updated"
+  },
+  {
+    "fullname": "Updated User 1788335353302",
+    "email": "updated1788335353302@gmail.com",
+    "username": "updated1788335353302",
+    "password": "Test@12345",
+    "status": "updated"
+  }
+]
