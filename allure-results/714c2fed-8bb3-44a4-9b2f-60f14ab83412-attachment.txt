@@ -1,0 +1,32 @@
+Login: {
+  statusCode: 200,
+  data: {
+    user: {
+      _id: '6a951b79271aa3474a4973c4',
+      username: 'myashfeen',
+      email: 'mariyam@gmail.com',
+      fullname: 'mariyam',
+      createdAt: '2026-08-31T06:13:13.343Z',
+      updatedAt: '2026-09-02T06:04:33.986Z',
+      __v: 0
+    },
+    accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTk1MWI3OTI3MWFhMzQ3NGE0OTczYzQiLCJlbWFpbCI6Im1hcml5YW1AZ21haWwuY29tIiwidXNlcm5hbWUiOiJtYXJpeWFtIiwiaWF0IjoxNzg4MzI5MDczLCJleHAiOjE3ODg0MTU0NzN9.fcCIxZ5nHp-FBMz0vhk5MJ-CSrI3Dcvm9m87vTeIIy8',
+    refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTk1MWI3OTI3MWFhMzQ3NGE0OTczYzQiLCJlbWFpbCI6Im1hcml5YW1AZ21haWwuY29tIiwidXNlcm5hbWUiOiJtYXJpeWFtIiwiaWF0IjoxNzg4MzI5MDczLCJleHAiOjE3ODkxOTMwNzN9.0KYBGOedjs4rjSudLa8wu_eVw64ideGGR2VA_yCak2A'
+  },
+  message: 'User Logged in successfully',
+  success: true
+}
+Original User: {
+  statusCode: 200,
+  data: {
+    _id: '6a951b79271aa3474a4973c4',
+    username: 'myashfeen',
+    email: 'mariyam@gmail.com',
+    fullname: 'mariyam',
+    createdAt: '2026-08-31T06:13:13.343Z',
+    updatedAt: '2026-09-02T06:04:33.986Z',
+    __v: 0
+  },
+  message: 'Current user fetched successfully',
+  success: true
+}

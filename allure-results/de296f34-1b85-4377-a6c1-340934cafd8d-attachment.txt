@@ -1,0 +1,48 @@
+Login: {
+  statusCode: 200,
+  data: {
+    user: {
+      _id: '6a951b79271aa3474a4973c4',
+      username: 'myashfeen',
+      email: 'mariyam@gmail.com',
+      fullname: 'mariyam',
+      createdAt: '2026-08-31T06:13:13.343Z',
+      updatedAt: '2026-09-02T07:10:32.416Z',
+      __v: 0
+    },
+    accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTk1MWI3OTI3MWFhMzQ3NGE0OTczYzQiLCJlbWFpbCI6Im1hcml5YW1AZ21haWwuY29tIiwidXNlcm5hbWUiOiJtYXJpeWFtIiwiaWF0IjoxNzg4MzMzMDMyLCJleHAiOjE3ODg0MTk0MzJ9.MzcgFPJuqXwnBk52e1PIvyA_QJcL4QihEsM7N5I7GlM',
+    refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTk1MWI3OTI3MWFhMzQ3NGE0OTczYzQiLCJlbWFpbCI6Im1hcml5YW1AZ21haWwuY29tIiwidXNlcm5hbWUiOiJtYXJpeWFtIiwiaWF0IjoxNzg4MzMzMDMyLCJleHAiOjE3ODkxOTcwMzJ9.WUvhrZSlj085nB6EWkHQaGsNypUAaT5nWeyOnvjFLQ0'
+  },
+  message: 'User Logged in successfully',
+  success: true
+}
+Original User: {
+  statusCode: 200,
+  data: {
+    _id: '6a951b79271aa3474a4973c4',
+    username: 'mariyam_updated',
+    email: 'mariyam@gmail.com',
+    fullname: 'Mariyam yashfeen',
+    createdAt: '2026-08-31T06:13:13.343Z',
+    updatedAt: '2026-09-02T07:10:31.907Z',
+    __v: 0
+  },
+  message: 'Current user fetched successfully',
+  success: true
+}
+PUT Status: 200
+PUT Response: {
+  statusCode: 200,
+  data: {
+    _id: '6a951b79271aa3474a4973c4',
+    username: 'mariyam_updated',
+    email: 'mariyam@gmail.com',
+    fullname: 'Mariyam yashfeen',
+    createdAt: '2026-08-31T06:13:13.343Z',
+    updatedAt: '2026-09-02T07:10:33.902Z',
+    __v: 0,
+    refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTk1MWI3OTI3MWFhMzQ3NGE0OTczYzQiLCJlbWFpbCI6Im1hcml5YW1AZ21haWwuY29tIiwidXNlcm5hbWUiOiJtYXJpeWFtIiwiaWF0IjoxNzg4MzMzMDMyLCJleHAiOjE3ODkxOTcwMzJ9.WUvhrZSlj085nB6EWkHQaGsNypUAaT5nWeyOnvjFLQ0'
+  },
+  message: 'User details replaced successfully',
+  success: true
+}
