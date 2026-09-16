@@ -12,16 +12,19 @@ pipeline {
             }
         }
 
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm ci'
+            }
+        }
+
         stage('Run Playwright Tests') {
             steps {
-                // Uses the host Docker engine to run tests inside a fully prepared Playwright environment
-                sh '''
-                docker run --rm \
-                  -v "${WORKSPACE}":/work \
-                  -w /work \
-                  ://microsoft.com \
-                  /bin/bash -c "npm ci && npx playwright test"
-                '''
+                // Installs the specific headless browser runtimes inside Jenkins
+                sh 'npx playwright install chromium'
+                
+                // Triggers your automated test suites natively
+                sh 'npx playwright test'
             }
         }
     }
