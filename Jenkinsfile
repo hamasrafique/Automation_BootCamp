@@ -1,25 +1,48 @@
 pipeline {
-    // Is line se Jenkins automatically internet se Playwright ka ready-made container uthaye ga
-    agent {
-        docker { 
-            image '://microsoft.com' 
-        }
+    agent any
+    
+    tools {
+        nodejs 'NodeJS'
+        dockerTool 'downloaded-docker' // Forces Jenkins to use the automatically managed Docker binary
     }
     
     stages {
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
-                echo 'GitHub se fresh code download ho raha hai...'
+                checkout scm
             }
         }
-        
-        stage('Run Playwright Tests') {
+
+        stage('Install Dependencies') {
             steps {
-                echo 'Playwright environment ke andar tests execute ho rahe hain...'
-                // Is container mein npm pehle se hota hai, bas packages install karein aur test run karein
                 sh 'npm ci'
+            }
+        }
+
+        stage('Run Playwright Tests') {
+            agent {
+                docker {
+                    image '://microsoft.com'
+                    reuseNode true
+                }
+            }
+            steps {
                 sh 'npx playwright test'
             }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'playwright-report/**/*, test-results/**/*', allowEmptyArchive: true
+            publishHTML(target: [
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'playwright-report',
+                reportFiles: 'index.html',
+                reportName: 'Playwright HTML Report'
+            ])
         }
     }
 }
