@@ -1,29 +1,16 @@
 pipeline {
-    agent any
-    
-    tools {
-        nodejs 'NodeJS'
+    agent {
+        docker {
+            image '://microsoft.com'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+            reuseNode true
+        }
     }
     
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm ci'
-            }
-        }
-
         stage('Run Playwright Tests') {
             steps {
-                // Installs the specific headless browser runtimes inside Jenkins
-                sh 'npx playwright install chromium'
-                
-                // Triggers your automated test suites natively
+                sh 'npm ci'
                 sh 'npx playwright test'
             }
         }
@@ -32,14 +19,6 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'playwright-report/**/*, test-results/**/*', allowEmptyArchive: true
-            publishHTML(target: [
-                allowMissing: true,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'playwright-report',
-                reportFiles: 'index.html',
-                reportName: 'Playwright HTML Report'
-            ])
         }
     }
 }
