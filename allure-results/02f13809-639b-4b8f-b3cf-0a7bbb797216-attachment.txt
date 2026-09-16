@@ -1,0 +1,11 @@
+Generated User: {
+  fullname: 'Test User 1789031735791',
+  email: 'testuser1789031735791@gmail.com',
+  username: 'testuser1789031735791',
+  password: 'Test@12345'
+}
+Register Status: 201
+Register Response: {"statusCode":201,"data":{"_id":"6aa2753961cebd4a4a930494","username":"testuser1789031735791","email":"testuser1789031735791@gmail.com","fullname":"Test User 1789031735791","createdAt":"2026-09-10T09:15:37.607Z","updatedAt":"2026-09-10T09:15:37.607Z","__v":0},"message":"User registered Successfully","success":true}
+User saved to users.json
+Login Status: 200
+Token received

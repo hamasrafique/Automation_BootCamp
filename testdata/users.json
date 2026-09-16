@@ -39,5 +39,47 @@
     "username": "updated1788335353302",
     "password": "Test@12345",
     "status": "updated"
+  },
+  {
+    "fullname": "Updated User 1789031638973",
+    "email": "updated1789031638973@gmail.com",
+    "username": "updated1789031638973",
+    "password": "Test@12345",
+    "status": "updated"
+  },
+  {
+    "fullname": "Updated User 1789031649766",
+    "email": "updated1789031649766@gmail.com",
+    "username": "updated1789031649766",
+    "password": "Test@12345",
+    "status": "updated"
+  },
+  {
+    "fullname": "Updated User 1789031657094",
+    "email": "updated1789031657094@gmail.com",
+    "username": "updated1789031657094",
+    "password": "Test@12345",
+    "status": "updated"
+  },
+  {
+    "fullname": "Updated User 1789031721717",
+    "email": "updated1789031721717@gmail.com",
+    "username": "updated1789031721717",
+    "password": "Test@12345",
+    "status": "updated"
+  },
+  {
+    "fullname": "Updated User 1789031728351",
+    "email": "updated1789031728351@gmail.com",
+    "username": "updated1789031728351",
+    "password": "Test@12345",
+    "status": "updated"
+  },
+  {
+    "fullname": "Test User 1789031735791",
+    "email": "testuser1789031735791@gmail.com",
+    "username": "testuser1789031735791",
+    "password": "Test@12345",
+    "status": "registered"
   }
 ]

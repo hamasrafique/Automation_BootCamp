@@ -1,9 +1,8 @@
 {
   "user": {
-    "fullname": "Updated User 1788335353302",
-    "email": "updated1788335353302@gmail.com",
-    "username": "updated1788335353302"
-  },
-  "password": "Test@12345",
-  "userId": "6a97d4f9e3185e8a01627e91"
+    "fullname": "Test User 1789031735791",
+    "email": "testuser1789031735791@gmail.com",
+    "username": "testuser1789031735791",
+    "password": "Test@12345"
+  }
 }
