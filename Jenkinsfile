@@ -12,34 +12,23 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                // Installs Node packages
-                sh 'npm ci'
-            }
-        }
-
-        stage('Install Playwright Browsers') {
-            steps {
-                // Downloads Chromium, Firefox, and WebKit inside the runner environment
-                sh 'npx playwright install --with-deps'
-            }
-        }
-
         stage('Run Playwright Tests') {
             steps {
-                // Runs the tests directly on the system
-                sh 'npx playwright test'
+                // Uses the host Docker engine to run tests inside a fully prepared Playwright environment
+                sh '''
+                docker run --rm \
+                  -v "${WORKSPACE}":/work \
+                  -w /work \
+                  ://microsoft.com \
+                  /bin/bash -c "npm ci && npx playwright test"
+                '''
             }
         }
     }
 
     post {
         always {
-            // Archives build results and logs
             archiveArtifacts artifacts: 'playwright-report/**/*, test-results/**/*', allowEmptyArchive: true
-            
-            // Generates the visual Jenkins Report Tab
             publishHTML(target: [
                 allowMissing: true,
                 alwaysLinkToLastBuild: true,
