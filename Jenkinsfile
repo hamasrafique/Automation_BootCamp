@@ -2,8 +2,7 @@ pipeline {
     agent any
     
     tools {
-        nodejs 'NodeJS'
-        dockerTool 'downloaded-docker' // Forces Jenkins to use the automatically managed Docker binary
+        nodejs 'NodeJS' // Must match the Name configured in Jenkins Tools exactly
     }
     
     stages {
