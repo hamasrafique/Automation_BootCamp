@@ -1,6 +1,11 @@
 pipeline {
     agent any
     
+    // Yeh block Jenkins ko batayega ke node use kare
+    tools {
+        nodejs 'node20' 
+    }
+    
     stages {
         stage('Checkout Code') {
             steps {
@@ -11,8 +16,9 @@ pipeline {
         stage('Run Playwright Tests') {
             steps {
                 echo 'Node/Playwright environment ke andar tests run ho rahe hain...'
-                // Docker image build karne ke bajaye direct framework commands chalaein
                 sh 'npm install'
+                // Playwright ke zaroori browsers download karne ke liye
+                sh 'npx playwright install --with-deps' 
                 sh 'npx playwright test'
             }
         }
