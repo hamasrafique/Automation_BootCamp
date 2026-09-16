@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     tools {
-        nodejs 'NodeJS' // Must match the Name configured in Jenkins Tools exactly
+        nodejs 'NodeJS'
     }
     
     stages {
@@ -19,14 +19,11 @@ pipeline {
         }
 
         stage('Run Playwright Tests') {
-            agent {
-                docker {
-                    image '://microsoft.com'
-                    reuseNode true
-                }
-            }
             steps {
-                sh 'npx playwright test'
+                // Uses the agent's background Docker engine directly
+                withDockerContainer(image: '://microsoft.com', args: '-v /var/run/docker.sock:/var/run/docker.sock') {
+                    sh 'npx playwright test'
+                }
             }
         }
     }
@@ -34,6 +31,8 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'playwright-report/**/*, test-results/**/*', allowEmptyArchive: true
+            
+            // This works perfectly now that the HTML Publisher plugin is installed
             publishHTML(target: [
                 allowMissing: true,
                 alwaysLinkToLastBuild: true,
