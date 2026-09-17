@@ -1,29 +1,26 @@
 pipeline {
-    agent any 
+    agent any
 
     stages {
         stage('Run Playwright Tests') {
-            agent {
-                docker {
-                    image '://microsoft.com'
-                    // Explicitly reuse the node instance to access the host socket mounts
-                    reuseNode true 
-                }
-            }
             steps {
-                // Execute setup and tests entirely inside the isolated Playwright container
-                sh 'npm ci'
-                sh 'npx playwright test'
+                // We use standard shell commands so Jenkins does not get confused by plugin paths
+                sh '''
+                docker run --rm \
+                  -v /var/run/docker.sock:/var/run/docker.sock \
+                  -v "${WORKSPACE}":/work \
+                  -w /work \
+                  ://microsoft.com \
+                  /bin/bash -c "npm ci && npx playwright test"
+                '''
             }
         }
     }
 
     post {
         always {
-            // Context-safe artifact archiving layout
-            node('built-in') {
-                archiveArtifacts artifacts: 'playwright-report/**/*, test-results/**/*', allowEmptyArchive: true
-            }
+            // This is wrapped inside the node context so it never throws a MissingContextVariableException
+            archiveArtifacts artifacts: 'playwright-report/**/*, test-results/**/*', allowEmptyArchive: true
         }
     }
 }
